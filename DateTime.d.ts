@@ -14,6 +14,12 @@ declare class DateTime {
     constructor(millis: number);
 
     /**
+     * Constructs a `DateTime` from another `DateTime`.
+     * @param dateTime A DateTime object.
+     */
+    constructor(dateTime: DateTime);
+
+    /**
      * Creates a new instance of `DateTime` with the specified date and time.
      *
      * @param year - The year.
@@ -78,21 +84,28 @@ declare class DateTime {
      *
      * @returns The day of the month (1-31).
      */
-    dayOfMonth(): number;
+    getDayOfMonth(): number;
+
+    /**
+     * Gets the day of the week represented by this `DateTime`.
+     *
+     * @returns The day of the week (1-7, where 1 represents Monday and 7 represents Sunday).
+     */
+    getDayOfWeek(): number;
 
     /**
      * Gets the day of the year represented by this `DateTime`.
      *
      * @returns The day of the year (1-365 or 1-366 for leap years).
      */
-    dayOfYear(): number;
+    getDayOfYear(): number;
 
     /**
      * Gets the hour of the day represented by this `DateTime`.
      *
      * @returns The hour of the day (0-23).
      */
-    hourOfDay(): number;
+    getHourOfDay(): number;
 
     /**
      * Gets the number of milliseconds since the Unix epoch (1970-01-01T00:00:00Z) represented by this `DateTime`.
@@ -106,35 +119,28 @@ declare class DateTime {
      *
      * @returns The minute of the hour (0-59).
      */
-    minuteOfHour(): number;
+    getMinuteOfHour(): number;
 
     /**
      * Gets the month of the year represented by this `DateTime`.
      *
      * @returns The month of the year (1-12).
      */
-    monthOfYear(): number;
+    getMonthOfYear(): number;
 
-    /**
-     * Gets the second of the day represented by this `DateTime`.
-     *
-     * @returns The second of the day.
-     */
-    secondOfDay(): number;
-    
     /**
      * Gets the second of the minute represented by this `DateTime`.
      *
      * @returns The second of the minute (0-59).
      */
-    secondOfMinute(): number;
+    getSecondOfMinute(): number;
 
     /**
      * Gets the year represented by this `DateTime`.
      *
      * @returns The year.
      */
-    year(): number;
+    getYear(): number;
 
     /**
      * Returns a new `DateTime` that is `days` days earlier than this `DateTime`.
