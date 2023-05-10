@@ -1,7 +1,7 @@
 /**
  * Represents a property of a `DateTime`.
  */
-interface DateTimeProperty {
+type DateTimeProperty = {
     /**
      * Gets the value of this property from the specified `DateTime`.
      *
@@ -115,28 +115,27 @@ declare class DateTime {
 
     /**
      * Is this `DateTime` after the `DateTime` passed in comparing solely by millisecond.
-     * 
+     *
      * @param dateTime `DateTime` to be compared to.
      * @returns True if this `DateTime` is after the passed in `DateTime`, otherwise false.
      */
-    isAfter(dateTime: DateTime): boolean
-
+    isAfter(dateTime: DateTime): boolean;
 
     /**
      * Is this `DateTime` before the `DateTime` passed in comparing solely by millisecond.
-     * 
+     *
      * @param dateTime `DateTime` to be compared to.
      * @returns True if this `DateTime` is before the passed in `DateTime`, otherwise false.
      */
-    isBefore(dateTime: DateTime): boolean
+    isBefore(dateTime: DateTime): boolean;
 
     /**
      * Is this `DateTime` equal to the `DateTime` passed in comparing solely by millisecond.
-     * 
+     *
      * @param dateTime `DateTime` to be compared to.
      * @returns True if this `DateTime` is equal to the passed in `DateTime`, otherwise false.
      */
-    isEqual(dateTime: DateTime): boolean
+    isEqual(dateTime: DateTime): boolean;
 
     /**
      * Gets the day of the month property represented by this `DateTime`.
@@ -461,4 +460,73 @@ declare class DateTime {
      * @param format
      */
     toString(format: string): string;
+}
+
+/**
+ * Represents a duration in days.
+ */
+declare class Days {
+    /**
+     * Creates a new instance of `Days` with the specified number of days.
+     *
+     * @param days - The number of days.
+     * @returns A new instance of `Days`.
+     */
+    constructor(days: number);
+
+    /**
+     * Gets the number of days in this duration.
+     *
+     * @returns The number of days in this duration.
+     */
+    getDays(): number;
+
+    /**
+     * Returns a new duration that is the sum of this duration and the specified duration.
+     *
+     * @param days - The duration to add.
+     * @returns A new duration that is the sum of this duration and the specified duration.
+     */
+    plus(days: Days): Days;
+
+    /**
+     * Returns a new duration that is the difference of this duration and the specified duration.
+     *
+     * @param days - The duration to subtract.
+     * @returns A new duration that is the difference of this duration and the specified duration.
+     */
+    minus(days: Days): Days;
+
+    /**
+     * Returns a new duration with the same number of days as this duration, multiplied by the specified factor.
+     *
+     * @param scalar - The factor to multiply by.
+     * @returns A new duration with the same number of days as this duration, multiplied by the specified factor.
+     */
+    multipliedBy(scalar: number): Days;
+
+    /**
+     * Returns a new duration with the same number of days as this duration, divided by the specified divisor.
+     *
+     * @param divisor - The divisor to divide by.
+     * @returns A new duration with the same number of days as this duration, divided by the specified divisor.
+     */
+    dividedBy(divisor: number): Days;
+
+    /**
+     * Returns a new `Days` object with the specified number of days.
+     *
+     * @param days - The number of days.
+     * @returns A new `Days` object with the specified number of days.
+     */
+    static days(days: number): Days;
+
+    /**
+     * Returns the number of days between the two specified `DateTime` objects.
+     *
+     * @param start - The start `DateTime`.
+     * @param end - The end `DateTime`.
+     * @returns The number of days between the two specified `DateTime` objects.
+     */
+    static daysBetween(start: DateTime, end: DateTime): Days;
 }
