@@ -106,21 +106,28 @@ declare class DateTime {
      *
      * @returns The minute of the hour (0-59).
      */
-    getMinuteOfHour(): number;
+    minuteOfHour(): number;
 
     /**
      * Gets the month of the year represented by this `DateTime`.
      *
      * @returns The month of the year (1-12).
      */
-    getMonthOfYear(): number;
+    monthOfYear(): number;
 
+    /**
+     * Gets the second of the day represented by this `DateTime`.
+     *
+     * @returns The second of the day.
+     */
+    secondOfDay(): number;
+    
     /**
      * Gets the second of the minute represented by this `DateTime`.
      *
      * @returns The second of the minute (0-59).
      */
-    getSecondOfMinute(): number;
+    secondOfMinute(): number;
 
     /**
      * Gets the year represented by this `DateTime`.
@@ -338,7 +345,7 @@ declare class DateTime {
 
     /**
      * Output the `DateTime` as string using the specified format pattern.
-     * @param format 
+     * @param format
      */
-    toString(format: string): string
+    toString(format: string): string;
 }
