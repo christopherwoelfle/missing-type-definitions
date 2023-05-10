@@ -418,11 +418,10 @@ declare class DateTime {
     withSecondOfMinute(secondOfMinute: number): DateTime;
 
     /**
-     * Returns a new `DateTime` that is rounded to the floor of the specified unit.
-     * @param unit The unit to round to, such as 'day' or 'hour'.
-     * @return A new `DateTime` rounded to the specified unit.
+     * Returns a new `DateTime` with the time set to the start of the day.
+     * @return A new `DateTime` with the time set to the start of the day.
      */
-    withTimeAtStartOfDay(unit: string): DateTime;
+    withTimeAtStartOfDay(): DateTime;
 
     /**
      * Returns a new `DateTime` with the year set to the specified value.
