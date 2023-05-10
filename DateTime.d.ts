@@ -1,4 +1,31 @@
 /**
+ * Represents a property of a `DateTime`.
+ */
+interface DateTimeProperty {
+    /**
+     * Gets the value of this property from the specified `DateTime`.
+     *
+     * @param dateTime - The `DateTime` to get the value from.
+     * @returns The value of this property.
+     */
+    get(dateTime: DateTime): number;
+
+    /**
+     * Returns a new `DateTime` with this field set to the maximum value for this field.
+     *
+     * @returns The new `DateTime`
+     */
+    withMaximumValue();
+
+    /**
+     * Returns a new `DateTime` with this field set to the minimum value for this field.
+     *
+     * @returns The new `DateTime`
+     */
+    withMinimumValue(): DateTime;
+}
+
+/**
  * Typings for Joda DateTime class
  */
 declare class DateTime {
@@ -87,11 +114,25 @@ declare class DateTime {
     getDayOfMonth(): number;
 
     /**
+     * Gets the day of the month property represented by this `DateTime`.
+     *
+     * @returns The day of the month property.
+     */
+    dayOfMonth(): DateTimeProperty;
+
+    /**
      * Gets the day of the week represented by this `DateTime`.
      *
      * @returns The day of the week (1-7, where 1 represents Monday and 7 represents Sunday).
      */
     getDayOfWeek(): number;
+
+    /**
+     * Gets the day of the week property represented by this `DateTime`.
+     *
+     * @returns The day of the week property.
+     */
+    dayOfWeek(): DateTimeProperty;
 
     /**
      * Gets the day of the year represented by this `DateTime`.
@@ -101,11 +142,25 @@ declare class DateTime {
     getDayOfYear(): number;
 
     /**
+     * Gets the day of the year property represented by this `DateTime`.
+     *
+     * @returns The day of the year property.
+     */
+    dayOfYear(): DateTimeProperty;
+
+    /**
      * Gets the hour of the day represented by this `DateTime`.
      *
      * @returns The hour of the day (0-23).
      */
     getHourOfDay(): number;
+
+    /**
+     * Gets the hour of the day property represented by this `DateTime`.
+     *
+     * @returns The hour of the day property.
+     */
+    hourOfDay(): DateTimeProperty;
 
     /**
      * Gets the number of milliseconds since the Unix epoch (1970-01-01T00:00:00Z) represented by this `DateTime`.
@@ -122,11 +177,25 @@ declare class DateTime {
     getMinuteOfHour(): number;
 
     /**
+     * Gets the minute of the hour property represented by this `DateTime`.
+     *
+     * @returns The minute of the hour property.
+     */
+    minuteOfHour(): DateTimeProperty;
+
+    /**
      * Gets the month of the year represented by this `DateTime`.
      *
      * @returns The month of the year (1-12).
      */
     getMonthOfYear(): number;
+
+    /**
+     * Gets the month of the year property represented by this `DateTime`.
+     *
+     * @returns The month of the year property.
+     */
+    monthOfYear(): DateTimeProperty;
 
     /**
      * Gets the second of the minute represented by this `DateTime`.
@@ -136,11 +205,25 @@ declare class DateTime {
     getSecondOfMinute(): number;
 
     /**
+     * Gets the second of the minute property represented by this `DateTime`.
+     *
+     * @returns The second of the minute property.
+     */
+    secondOfMinute(): DateTimeProperty;
+
+    /**
      * Gets the year represented by this `DateTime`.
      *
      * @returns The year.
      */
     getYear(): number;
+
+    /**
+     * Gets the year property represented by this `DateTime`.
+     *
+     * @returns The year property.
+     */
+    year(): DateTimeProperty;
 
     /**
      * Returns a new `DateTime` that is `days` days earlier than this `DateTime`.
