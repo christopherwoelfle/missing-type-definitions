@@ -127,7 +127,7 @@ declare class DateTime {
      *
      * @returns The year.
      */
-    getYear(): number;
+    year(): number;
 
     /**
      * Returns a new `DateTime` that is `days` days earlier than this `DateTime`.
