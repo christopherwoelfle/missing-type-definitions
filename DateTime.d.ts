@@ -15,7 +15,7 @@ interface DateTimeProperty {
      *
      * @returns The new `DateTime`
      */
-    withMaximumValue();
+    withMaximumValue(): DateTime;
 
     /**
      * Returns a new `DateTime` with this field set to the minimum value for this field.
