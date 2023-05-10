@@ -114,6 +114,31 @@ declare class DateTime {
     getDayOfMonth(): number;
 
     /**
+     * Is this `DateTime` after the `DateTime` passed in comparing solely by millisecond.
+     * 
+     * @param dateTime `DateTime` to be compared to.
+     * @returns True if this `DateTime` is after the passed in `DateTime`, otherwise false.
+     */
+    isAfter(dateTime: DateTime): boolean
+
+
+    /**
+     * Is this `DateTime` before the `DateTime` passed in comparing solely by millisecond.
+     * 
+     * @param dateTime `DateTime` to be compared to.
+     * @returns True if this `DateTime` is before the passed in `DateTime`, otherwise false.
+     */
+    isBefore(dateTime: DateTime): boolean
+
+    /**
+     * Is this `DateTime` equal to the `DateTime` passed in comparing solely by millisecond.
+     * 
+     * @param dateTime `DateTime` to be compared to.
+     * @returns True if this `DateTime` is equal to the passed in `DateTime`, otherwise false.
+     */
+    isEqual(dateTime: DateTime): boolean
+
+    /**
      * Gets the day of the month property represented by this `DateTime`.
      *
      * @returns The day of the month property.
